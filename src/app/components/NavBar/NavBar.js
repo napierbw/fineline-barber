@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import NavLinks from "../Navbar/NavLinks";
+import NavLinks from "./NavLinks";
 import Link from "next/link";
 
 const NavBar = () => {
