@@ -7,15 +7,42 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/hero-bg.webp) center;
+  background-size: cover;
+}
+
+.grey-bg {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7));
+  background-size: cover;
+}
+
+.testimonial {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/testimonial.webp) center;
+}
+
+.footer {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/logo.webp) center;
+}
+
+.cta {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/logo.webp) center;
+}
+
