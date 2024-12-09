@@ -1,8 +1,5 @@
-"use client"
-
 import React from "react";
 import * as contentful from "contentful";
-import { useState, useEffect } from "react";
 
 const client = contentful.createClient({
   space: "9yhw5dafhh7t",
@@ -10,30 +7,11 @@ const client = contentful.createClient({
   accessToken: process.env.Contentful_AccessToken,
 });
 
-// client
-//   .getEntry("7DXlCmvt6siZY4k7cq3wLT")
-//   .then((entry) => console.log(entry))
-//   .catch(console.error);
-
-// const renderGallery = async () => {
-//   client
-//     .getEntries()
-//     .then((entries) => {
-//       console.log(entries);
-//       entries.items.map((entry) => {
-//         <img href={`https:${entry.fields.photo.fields.file.url}`}></img>;
-//       });
-//     })
-//     .catch(console.error);
-// };
-
-const Services = () => {
-  const [services, setServices] = useState([]);
-
-  const fetchServices = async () => {
+const Services = async () => {
+    let services = [];
     try {
       const serviceMenu = await client.getEntry("6vXcyToT0GgDLpswKUxziD");
-      const serviceElements = serviceMenu.fields.serviceItems.map((svc) => (
+      services = serviceMenu.fields.serviceItems.map((svc) => (
         <div
           className="p-2 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 my-4 w-full px-8 aos-init aos-animate"
           data-aos="fade-up"
@@ -82,15 +60,9 @@ const Services = () => {
           </div>
         </div>
       ));
-      setServices(serviceElements);
     } catch (error) {
       console.error(error);
     }
-  };
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
 
   return (
     <>

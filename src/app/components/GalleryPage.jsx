@@ -1,8 +1,5 @@
-"use client"
-
 import React from "react";
 import * as contentful from "contentful";
-import { useState, useEffect } from "react";
 
 const client = contentful.createClient({
   space: "9yhw5dafhh7t",
@@ -10,30 +7,13 @@ const client = contentful.createClient({
   accessToken: process.env.Contentful_AccessToken,
 });
 
-// client
-//   .getEntry("7DXlCmvt6siZY4k7cq3wLT")
-//   .then((entry) => console.log(entry))
-//   .catch(console.error);
+const Gallery = async () => {
 
-// const renderGallery = async () => {
-//   client
-//     .getEntries()
-//     .then((entries) => {
-//       console.log(entries);
-//       entries.items.map((entry) => {
-//         <img href={`https:${entry.fields.photo.fields.file.url}`}></img>;
-//       });
-//     })
-//     .catch(console.error);
-// };
+  let images = []
 
-const Gallery = () => {
-  const [images, setImages] = useState([]);
-
-  const fetchGallery = async () => {
     try {
       const mainGallery = await client.getEntry("6gFyMowBFVhDPZKz6l4WXq");
-      const imageElements = mainGallery.fields.photos.map((entry) => (
+      images = mainGallery.fields.photos.map((entry) => (
         <img
           key={entry.sys.id}
           src={`https:${entry.fields.photo.fields.file.url}`}
@@ -41,15 +21,9 @@ const Gallery = () => {
           className="gallery-image"
         />
       ));
-      setImages(imageElements);
     } catch (error) {
       console.error(error);
     }
-  };
-
-  useEffect(() => {
-    fetchGallery();
-  }, []);
 
   return (
     <>
