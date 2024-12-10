@@ -1,9 +1,6 @@
-"use client";
-
 import localFont from "next/font/local";
 import "aos/dist/aos.css";
 import "./globals.css";
-import ClientLayoutEffect from "./components/ClientLayoutEffect";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientLayoutEffect />
         {children}
       </body>
     </html>
