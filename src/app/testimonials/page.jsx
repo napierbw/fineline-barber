@@ -1,18 +1,8 @@
-"use client"
-
 import React from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar/NavBar";
-import AOS from "aos";
-import { useEffect } from "react";
 
 const Testimonials = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Animation happens only once
-    });
-  }, []);
   return (
     <>
       <div className="testimonial">
