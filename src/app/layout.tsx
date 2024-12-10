@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "aos/dist/aos.css";
 import "./globals.css";
-import ClientLayoutEffect from "./components/ClientLayoutEffect";
+import dynamic from "next/dynamic";
+
+const ClientLayoutEffect = dynamic(
+  () => import("./components/ClientLayoutEffect"),
+  {
+    ssr: false, // Disable server-side rendering for this component
+  }
+);
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
