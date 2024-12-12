@@ -56,6 +56,10 @@ export default async function Services() {
                   service a diverse clientele and deliver top notch customer
                   service!
                 </p>
+                <p className="my-3 text-xl text-gray-700 font-semibold">
+                  We offer $5 discounts on Services $30+ for Seniors, Military
+                  Personnel & First Responders!
+                </p>
                 <div className="flex justify-center my-4">
                   <Link
                     href="/services"

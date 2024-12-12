@@ -4,7 +4,7 @@ import ServicesPage from "../components/ServicesPage"
 
 export default function Services() {
 
-  return <div className="services">
+  return <div>
     <NavBar/>
     <ServicesPage/>
     <Footer/>

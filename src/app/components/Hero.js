@@ -24,7 +24,7 @@ const Hero = () => {
                 804-396-9174 | 13965 Raised Antler Cir | Midlothian, VA 23112
               </div>
               <div className="text-xl font-semibold tracking-tight mb-5 text-white">
-                Walk-ins welcome!
+                Walk-Ins Only!
               </div>
             </div>
           </div>

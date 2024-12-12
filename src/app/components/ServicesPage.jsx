@@ -8,96 +8,85 @@ const client = contentful.createClient({
 });
 
 const Services = async () => {
-    let services = [];
-    try {
-      const serviceMenu = await client.getEntry("6vXcyToT0GgDLpswKUxziD");
-      services = serviceMenu.fields.serviceItems.map((svc) => (
-        <div
-          className="p-2 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 my-4 w-full px-8 aos-init aos-animate"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          {/* Image Column */}
-          {svc.fields.photo ? (
-            <div className="flex justify-center w-full mb-4 lg:mb-0">
-              <img
-                key={svc.sys.id}
-                src={`https:${svc.fields.photo.fields.file.url}`}
-                alt={svc.fields.photo.fields.title || "Service image"}
-                className="service-image"
-              />
-            </div>
-          ) : (
-            <></>
-          )}
-
-          {/* Text Column */}
-          <div className="flex flex-col items-center justify-center">
-            {svc.fields.service && svc.fields.price ? (
-              <h2 className="text-3xl text-black font-bold text-center mb-4">
-                {svc.fields.service} - {svc.fields.price}
-              </h2>
-            ) : (
-              <h2 className="text-3xl text-black font-bold text-center mb-4">
-                {svc.fields.service}
-              </h2>
-            )}
-
-            {svc.fields.description ? (
-              <p className="my-3 text-xl text-gray-600 font-semibold text-center">
-                {svc.fields.description.split("/n").map((part, index) => (
-                  <React.Fragment key={index}>
-                    {part}
-                    {index < svc.fields.description.split("/n").length - 1 && (
-                      <br />
-                    )}
-                  </React.Fragment>
-                ))}
-              </p>
-            ) : (
-              <></>
-            )}
+  let services = [];
+  try {
+    const serviceMenu = await client.getEntry("6vXcyToT0GgDLpswKUxziD");
+    services = serviceMenu.fields.serviceItems.map((svc, index) => (
+      <div
+        key={svc.sys.id}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center my-8 px-4 lg:px-0"
+        data-aos="fade-up"
+        data-aos-delay="100" // Staggered animations
+      >
+        {/* Image Section */}
+        {svc.fields.photo && (
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={`https:${svc.fields.photo.fields.file.url}`}
+              alt={svc.fields.photo.fields.title || "Service image"}
+              className="w-full max-w-[400px] h-auto object-cover rounded-lg shadow-lg"
+            />
           </div>
+        )}
+
+        {/* Text Section */}
+        <div className="flex flex-col justify-center text-center lg:text-left">
+          {/* Service Name and Price */}
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            {svc.fields.service}
+            {svc.fields.price && (
+              <span className="text-gray-800 font-semibold ml-2">
+                - {svc.fields.price}
+              </span>
+            )}
+          </h2>
+
+          {/* Description */}
+          {svc.fields.description && (
+            <p className="text-gray-600 leading-relaxed">
+              {svc.fields.description.split("/n").map((part, index) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index <
+                    svc.fields.description.split("/n").length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </p>
+          )}
         </div>
-      ));
-    } catch (error) {
-      console.error(error);
-    }
+      </div>
+    ));
+  } catch (error) {
+    console.error(error);
+  }
 
   return (
     <>
-        <div
-          className="p-2 md:p-12 h-[600px] flex items-center justify-center grey-bg"
+      {/* Header Section */}
+      <div
+        className="p-6 md:p-12 h-[400px] flex flex-col items-center justify-center bg-gray-900 text-white text-center services"
+        data-aos="zoom-in"
+      >
+        <h1
+          className="text-4xl md:text-5xl font-bold mb-4"
           data-aos="zoom-in"
+          data-aos-delay="200"
         >
-          <div className="flex flex-col lg:flex-row py-8 justify-center text-center items-center">
-            <div
-              className="lg:w-7/8 flex flex-col justify-center items-center"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <h1 className="mb-5 md:text-5xl text-3xl font-bold text-white">
-                Service Menu
-              </h1>
-            </div>
-          </div>
-        </div>
-      <div className="m-auto max-w-6xl p-2 md:p-12 h-5/6">
+          Service Menu
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
+          Explore our premium services tailored for your style and comfort.
+        </p>
+      </div>
+
+      {/* Services Grid */}
+      <div className="max-w-6xl mx-auto py-8 px-4 md:px-8">
         {services.length > 0 ? (
-          <>
-            {services.map((svc, index) => (
-              <div
-                className="aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                key={index}
-              >
-                {svc}
-              </div>
-            ))}
-          </>
+          <>{services}</>
         ) : (
-          <p className="h-[20vh] mb-48 text-white text-center">Coming soon!</p>
+          <p className="h-[20vh] mb-48 text-gray-800 text-center text-lg">
+            Coming soon!
+          </p>
         )}
       </div>
     </>

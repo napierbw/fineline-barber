@@ -91,15 +91,11 @@ const Footer = () => {
             </div>
 
             {/* 4th block */}
-            <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-white">
+            <div className="col-span-12 text-left lg:text-center ml-7 md:ml-auto lg:col-span-3 font-bold uppercase text-white mx-auto">
               <div className="text-xl mb-6">Social Media Links.</div>
-
-              <div className="text-md font-medium mb-6">
-                Follow us on social media.
-              </div>
               <div className="mx-auto text-center mt-2">
-                <ul className="flex justify-center mb-4 md:mb-0">
-                  <li className="ml-4">
+                <ul className="flex md:justify-center mb-4 md:mb-0">
+                  <li className="md:ml-4 mr-4 md:mr-0">
                     <a
                       target="_blank"
                       href="https://www.facebook.com/p/Fine-Line-Barbershop-100063117825367/"

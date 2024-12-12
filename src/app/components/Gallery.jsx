@@ -18,7 +18,7 @@ const Gallery = async () => {
           key={entry.sys.id}
           src={`https:${entry.fields.photo.fields.file.url}`}
           alt={entry.fields.photo.fields.title || "Gallery image"}
-          className="gallery-image"
+          className="w-full h-full object-cover gallery-image"
         />
       ));
     } catch (error) {
@@ -33,7 +33,7 @@ const Gallery = async () => {
             {images.map((img, index) => (
               <div
                 key={index}
-                className="aspect-w-1 aspect-h-1 bg-gray-800 overflow-hidden rounded-md"
+                className="aspect-square bg-gray-800 overflow-hidden rounded-md"
               >
                 {img}
               </div>

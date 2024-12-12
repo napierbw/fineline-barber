@@ -11,7 +11,7 @@ const Location = () => {
           <div className="w-24 border-b-4 border-black mb-8"></div>
         </div>
 
-        <div className="px-4" data-aos="fade-down" data-aos-delay="200">
+        <div className="px-4" data-aos="fade-down" data-aos-delay="100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div className="justify-center">
               <div>

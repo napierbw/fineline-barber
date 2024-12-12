@@ -29,6 +29,11 @@ html {
   background-size: cover;
 }
 
+.services {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/barbershop.jpg) center;
+  background-size: cover;
+}
+
 .grey-bg {
   background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7));
   background-size: cover;
@@ -44,5 +49,18 @@ html {
 
 .cta {
   background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/logo.webp) center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInAnimation 1.7s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
