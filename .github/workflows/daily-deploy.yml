@@ -1,0 +1,20 @@
+name: Daily Vercel Deployment
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # Runs at 00:00 UTC every day
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Trigger a Vercel deployment
+      - name: Trigger Vercel Deployment
+        run: |
+          curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_4toXBr811Fz7jgzX1k3ik770eeev/a6tHB91Atm" \
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}"
