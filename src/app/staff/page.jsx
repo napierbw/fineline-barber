@@ -15,7 +15,10 @@ const Staff = async () => {
     const staffList = await client.getEntry("9W1c5by3H3OoTty8Exax2");
     console.log(staffList);
     staff = staffList.fields.fineLineStaffMembers.map((member, index) => (
-      <div className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow-md">
+      <div
+        key={index}
+        className="flex flex-col items-center text-center p-4 bg-gray-100 rounded-lg shadow-md"
+      >
         {member.fields.photo && (
           <img
             src={`https:${member.fields.photo.fields.file.url}`}

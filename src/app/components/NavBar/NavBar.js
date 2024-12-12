@@ -25,7 +25,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${
+      className={`sticky top-0 w-full z-30 transition duration-300 ease-in-out bg-black shadow-lg ${
         !top && "bg-black shadow-lg"
       }`}
     >

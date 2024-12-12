@@ -16,7 +16,7 @@ const Testimonials = async () => {
     testimonialItems = testimonialList.fields.testimonials.map(
       (testimonial, index) => (
         <section className="testimonialItem p-12">
-          <div className="max-w-2xl m-auto">
+          <div key={index} className="max-w-2xl m-auto">
             <p className="text-2xl text-black font-bold text-center">
               "{testimonial.fields.review}"
             </p>
