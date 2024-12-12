@@ -44,28 +44,33 @@ const Location = () => {
               </div>
             </div>
 
-            <div className="px-6 py-8">
+            <div className="px-6 py-8 lg:mx-4">
+              <div className="flex flex-col items-center lg:items-end pb-4 px-4">
+                <p className="text-lg font-semibold text-gray-700">
+                  Walk-Ins Only!
+                </p>
+              </div>
               <div>
-                <div className="flex flex-col items-center rounded-lg p-4 shadow-sm">
+                <div className="flex flex-col items-center lg:items-end p-4">
                   <p className="text-lg font-semibold text-gray-700">Monday</p>
                   <p className="text-sm text-gray-600">Closed</p>
                 </div>
 
-                <div className="flex flex-col items-center rounded-lg p-4 shadow-sm">
+                <div className="flex flex-col items-center lg:items-end p-4">
                   <p className="text-lg font-semibold text-gray-700">
                     Tuesday-Friday
                   </p>
                   <p className="text-sm text-gray-600">9:00 AM - 6:00 PM</p>
                 </div>
 
-                <div className="flex flex-col items-center rounded-lg p-4 shadow-sm">
+                <div className="flex flex-col items-center lg:items-end p-4">
                   <p className="text-lg font-semibold text-gray-700">
                     Saturday
                   </p>
                   <p className="text-sm text-gray-600">9:00 AM - 3:00 PM</p>
                 </div>
 
-                <div className="flex flex-col items-center rounded-lg p-4 shadow-sm">
+                <div className="flex flex-col items-center lg:items-end p-4">
                   <p className="text-lg font-semibold text-gray-700">Sunday</p>
                   <p className="text-sm text-gray-600">Closed</p>
                 </div>

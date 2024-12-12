@@ -47,8 +47,9 @@ const Services = async () => {
               {svc.fields.description.split("/n").map((part, index) => (
                 <React.Fragment key={index}>
                   {part}
-                  {index <
-                    svc.fields.description.split("/n").length - 1 && <br />}
+                  {index < svc.fields.description.split("/n").length - 1 && (
+                    <br />
+                  )}
                 </React.Fragment>
               ))}
             </p>
@@ -63,10 +64,7 @@ const Services = async () => {
   return (
     <>
       {/* Header Section */}
-      <div
-        className="p-6 md:p-12 h-[400px] flex flex-col items-center justify-center bg-gray-900 text-white text-center services"
-        data-aos="zoom-in"
-      >
+      <div className="p-6 md:p-12 h-[60vh] flex flex-col items-center justify-center bg-gray-900 text-white text-center services">
         <h1
           className="text-4xl md:text-5xl font-bold mb-4"
           data-aos="zoom-in"
@@ -74,7 +72,11 @@ const Services = async () => {
         >
           Service Menu
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
+        <p
+          className="text-lg md:text-xl text-gray-300 max-w-2xl"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
           Explore our premium services tailored for your style and comfort.
         </p>
       </div>

@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <div className="hero" id="hero">
         <div
-          className="p-2 md:p-12 h-[600px] flex items-center justify-center"
+          className="p-2 md:p-12 h-[60vh] flex items-center justify-center"
           data-aos="zoom-in"
         >
           <div

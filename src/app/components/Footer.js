@@ -7,7 +7,7 @@ const Footer = () => {
       <footer>
         <div className="footer w-full px-4 sm:px-6 bg-gray-100 border-t border-b py-30">
           {/* Top area: Blocks */}
-          <div className="grid sm:grid-cols-12 gap-5 py-8 md:py-12 border-t border-gray-200 lg:ml-11">
+          <div className="grid sm:grid-cols-12 gap-5 py-8 md:py-12 border-t border-gray-200 max-w-6xl m-auto">
             {/* 1st block */}
             <div className="col-span-12 lg:col-span-4">
               <div className="box-border border-b-4 border-black p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
@@ -92,7 +92,7 @@ const Footer = () => {
 
             {/* 4th block */}
             <div className="col-span-12 text-left lg:text-center ml-7 md:ml-auto lg:col-span-3 font-bold uppercase text-white mx-auto">
-              <div className="text-xl mb-6">Social Media Links.</div>
+              <div className="text-xl mb-6">Social Media Links</div>
               <div className="mx-auto text-center mt-2">
                 <ul className="flex md:justify-center mb-4 md:mb-0">
                   <li className="md:ml-4 mr-4 md:mr-0">

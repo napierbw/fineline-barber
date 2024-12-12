@@ -41,6 +41,15 @@ html {
 
 .testimonial {
   background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(../../public/testimonial.webp) center;
+  background-size: cover;
+}
+
+section.testimonialItem {
+  background-color: #ffffff;
+}
+
+section.testimonialItem:nth-child(odd) {
+  background-color: rgb(243 244 246);
 }
 
 .footer {

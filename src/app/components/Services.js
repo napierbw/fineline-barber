@@ -37,8 +37,8 @@ export default async function Services() {
   // Render the services list
   return (
     <div id="services" className="bg-gray-100">
-      <section>
-        <div className="m-auto max-w-6xl p-2 md:p-12 h-5/6">
+      <section className="max-w-6xl m-auto">
+        <div className="m-auto max-w-6xl max-w-[90%] p-2 md:p-12 h-5/6">
           <div className="flex flex-col-reverse lg:flex-row py-8 lg:text-left lg:justify-between mt-[2rem] md:mt-0">
             <div className="lg:w-1/2 flex flex-col lg:mx-4">
               <h3
@@ -83,9 +83,9 @@ export default async function Services() {
               </div>
             </div>
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-1 md:gap-2 lg:gap-2 lg:mx-4 justify-center mb-[2rem] lg:mb-0">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:gap-2 lg:gap-2 lg:mx-4 justify-center mb-[4rem] lg:mb-0">
                 <h3
-                  className="text-l  text-black
+                  className="text-2xl  text-black
                             font-bold text-center lg:text-right"
                 >
                   Service Menu
