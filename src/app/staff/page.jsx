@@ -13,7 +13,6 @@ const Staff = async () => {
   let staff = [];
   try {
     const staffList = await client.getEntry("9W1c5by3H3OoTty8Exax2");
-    console.log(staffList);
     staff = staffList.fields.fineLineStaffMembers.map((member, index) => (
       <div
         key={index}

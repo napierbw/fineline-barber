@@ -14,7 +14,7 @@ const Intro = () => {
             </h2>
             <div>
               <p className="my-3 text-xl text-gray-600 font-semibold text-center">
-                Full Service Barbershop with over 20 years of experiance.
+                Full Service Barbershop with over 20 years of experience.
               </p>
             </div>
           </div>

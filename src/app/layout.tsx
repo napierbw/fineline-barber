@@ -29,8 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SpeedInsights />
-      <Analytics />
+      <head>
+        <SpeedInsights />
+        <Analytics />
+        <link rel="icon" href="/logo.webp" />
+        <link rel="apple-touch-icon" href="/logo.webp" />
+
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
