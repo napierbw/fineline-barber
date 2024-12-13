@@ -25,8 +25,8 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`sticky top-0 w-full z-30 transition duration-300 ease-in-out bg-black shadow-lg ${
-        !top && "bg-black shadow-lg"
+      className={`top-0 w-full z-30 transition duration-300 ease-in-out bg-black shadow-lg ${
+        isOpen ? "fixed" : "sticky"
       }`}
     >
       <div className="flex flex-row justify-between items-center py-2">
@@ -68,7 +68,7 @@ const NavBar = () => {
           </div>
 
           <div
-            className={`fixed transition-transform duration-300 ease-in-out transit flex justify-center left-0 w-full h-auto rounded-md p-24 bg-black lg:hidden shadow-xl top-14 ${
+            className={`fixed transition-transform duration-300 ease-in-out transit flex justify-center left-0 w-full h-auto rounded-b-md p-24 bg-black lg:hidden shadow-xl top-14 ${
               isOpen ? "block" : "hidden"
             } `}
           >
